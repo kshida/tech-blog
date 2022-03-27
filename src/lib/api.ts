@@ -1,9 +1,9 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { PER_PAGE } from 'lib/constants'
 
 const postsDirectory = join(process.cwd(), '_posts')
-const PER_PAGE: number = 3;
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)

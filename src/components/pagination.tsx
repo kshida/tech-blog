@@ -5,6 +5,7 @@ import {
   ListItem,
   UnorderedList,
 } from '@chakra-ui/react'
+import { PER_PAGE } from 'lib/constants'
 
 type Props = {
   totalCount: number
@@ -14,7 +15,6 @@ const range = (start: number, end: number) =>
   [...Array(end - start + 1)].map((_, i) => start + i)
 
 const Pagination = ({ totalCount }: Props) => {
-  const PER_PAGE: number = 3;
   return (
     <UnorderedList
       listStyleType={'none'}

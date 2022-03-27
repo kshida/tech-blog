@@ -1,6 +1,7 @@
 import Layout from 'components/layout'
 import Pagination from 'components/pagination'
 import { getAllPosts, getPagePosts } from 'lib/api'
+import { PER_PAGE } from 'lib/constants'
 import Post from 'types/post'
 import {
   Box,
@@ -24,8 +25,6 @@ interface IBlogTags {
   tags: Array<string>;
   marginTop?: SpaceProps['marginTop'];
 }
-
-const PER_PAGE: number = 3;
 
 const BlogTags: React.FC<IBlogTags> = (props) => {
   return (
