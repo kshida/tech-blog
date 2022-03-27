@@ -3,6 +3,7 @@ import { join } from 'path'
 import matter from 'gray-matter'
 
 const postsDirectory = join(process.cwd(), '_posts')
+const PER_PAGE: number = 3;
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
@@ -41,7 +42,16 @@ export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
+}
+
+export function getPagePosts(fields: string[] = [], offset: number = 1, limit: number = PER_PAGE) {
+  const posts = getAllPosts(fields)
+  const pagePosts = posts.slice(offset, (offset + limit))
+  const totalCount = posts.length
+  return {
+    pagePosts: pagePosts,
+    totalCount: totalCount
+  }
 }

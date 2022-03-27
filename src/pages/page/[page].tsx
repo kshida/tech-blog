@@ -1,5 +1,6 @@
 import Layout from 'components/layout'
-import { getPagePosts } from 'lib/api'
+import Pagination from 'components/pagination'
+import { getAllPosts, getPagePosts } from 'lib/api'
 import Post from 'types/post'
 import {
   Box,
@@ -15,13 +16,16 @@ import {
 } from '@chakra-ui/react';
 
 type Props = {
-  recentPosts: Post[]
+  pagePosts: Post[],
+  totalCount: number
 }
 
 interface IBlogTags {
   tags: Array<string>;
   marginTop?: SpaceProps['marginTop'];
 }
+
+const PER_PAGE: number = 3;
 
 const BlogTags: React.FC<IBlogTags> = (props) => {
   return (
@@ -37,14 +41,14 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
   );
 };
 
-const Index = ({ recentPosts }: Props) => {
+const Posts = ({ pagePosts, totalCount }: Props) => {
   return (
     <>
       <Layout>
         <Box p={10}>
           <Container maxW={'5xl'} mt='10' mb='10'>
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
-              {recentPosts.map((post) => (
+              {pagePosts.map((post) => (
                 // ブログカード
                 <Box key={post.slug} borderWidth='1px' borderRadius='lg' overflow='hidden'>
                   <Link href={`/posts/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }}>
@@ -68,24 +72,42 @@ const Index = ({ recentPosts }: Props) => {
             </SimpleGrid>
           </Container>
         </Box>
+        <Pagination totalCount={totalCount} />
       </Layout>
     </>
   )
 }
 
-export default Index
+export default Posts
 
-export const getStaticProps = async () => {
-  const recentPosts = getPagePosts([
+export const getStaticProps = async ( context: { params: { page: string; }; } ) => {
+  const page = +context.params.page;
+  const offset = PER_PAGE * (page - 1)
+  const posts = getPagePosts([
     'title',
     'date',
     'slug',
     'author',
     'coverImage',
     'excerpt',
-  ]).pagePosts
+  ], offset, PER_PAGE)
 
   return {
-    props: { recentPosts },
+    props: { 
+      pagePosts: posts.pagePosts,
+      totalCount: posts.totalCount
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const posts = getAllPosts(['slug'])
+  const totalCount = posts.length
+  const range = (start: number, end: number) => 
+    [...Array(end - start + 1)].map((_, i) => start + i)
+
+  return {
+    paths: range(1, Math.ceil(totalCount / PER_PAGE)).map((number) => `/page/${number}`),
+    fallback: false,
   }
 }

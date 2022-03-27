@@ -1,32 +1,99 @@
-import Container from './container'
-import { EXAMPLE_PATH } from '../lib/constants'
+import {
+  Box,
+  chakra,
+  Container,
+  Stack,
+  Text,
+  useColorModeValue,
+  VisuallyHidden,
+} from '@chakra-ui/react';
+import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { SiZenn } from 'react-icons/si';
+import NavLink from 'components/nav-link'
+
+type Props = {
+  label: string,
+  href: string,
+  children: React.ReactNode
+}
+
+const SocialButton = ({
+  children,
+  label,
+  href,
+}: Props) => {
+  return (
+    <chakra.button
+      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+      rounded={'full'}
+      w={8}
+      h={8}
+      cursor={'pointer'}
+      as={'a'}
+      href={href}
+      target={'_blank'}
+      display={'inline-flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
+      transition={'background 0.3s ease'}
+      _hover={{
+        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
+      }}>
+      <VisuallyHidden>{label}</VisuallyHidden>
+      {children}
+    </chakra.button>
+  );
+};
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
-        </div>
+    <Box
+      bg={useColorModeValue('gray.50', 'gray.900')}
+      color={useColorModeValue('gray.700', 'gray.200')}>
+      <Container
+        as={Stack}
+        maxW={'6xl'}
+        py={4}
+        spacing={4}
+        justify={'center'}
+        align={'center'}>
+        <Stack direction={'row'} spacing={6}>
+          <SocialButton label={'GitHub'} href={'https://github.com/kshida'}>
+            <FaGithub />
+          </SocialButton>
+          <SocialButton label={'Twitter'} href={'https://twitter.com/kshida39'}>
+            <FaTwitter />
+          </SocialButton>
+          <SocialButton label={'Zenn'} href={'https://zenn.dev/kshida'}>
+            <SiZenn />
+          </SocialButton>
+          <SocialButton label={'YouTube'} href={'#'}>
+            <FaYoutube />
+          </SocialButton>
+        </Stack>
       </Container>
-    </footer>
-  )
+
+      <Box
+        borderTopWidth={1}
+        borderStyle={'solid'}
+        borderColor={useColorModeValue('gray.200', 'gray.700')}>
+        <Container
+          as={Stack}
+          maxW={'6xl'}
+          py={3}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={4}
+          justify={{ base: 'center', md: 'space-between' }}
+          align={{ base: 'center', md: 'center' }}>
+          <Stack direction={'row'} spacing={1} className='text-xs'>
+            <NavLink link='/privacy-policy' isRichStyle={true}>プライバシーポリシー</NavLink>
+            <NavLink link='/disclaimer' isRichStyle={true}>免責事項</NavLink>
+          </Stack>
+          <Text fontSize='xs'>©2017-2022 プログラミングを知るはプログラミングを行うに如かず</Text>
+        </Container>
+      </Box>
+    </Box>
+  );
 }
 
 export default Footer
