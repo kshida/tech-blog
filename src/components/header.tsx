@@ -4,7 +4,7 @@ import {
   Heading,
   useColorModeValue,
   Stack,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 import { Links } from 'lib/links'
 import NavLink from 'components/nav-link'
 
@@ -36,7 +36,7 @@ const Header = () => {
         </Container>
       </Box>
     </>
-  );
+  )
 }
 
 export default Header

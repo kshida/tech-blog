@@ -12,15 +12,15 @@ import {
   SpaceProps,
   SimpleGrid,
   Container,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 
 type Props = {
   recentPosts: Post[]
 }
 
 interface IBlogTags {
-  tags: Array<string>;
-  marginTop?: SpaceProps['marginTop'];
+  tags: Array<string>
+  marginTop?: SpaceProps['marginTop']
 }
 
 const BlogTags: React.FC<IBlogTags> = (props) => {
@@ -31,11 +31,11 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
           <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
             {tag}
           </Tag>
-        );
+        )
       })}
     </HStack>
-  );
-};
+  )
+}
 
 const Index = ({ recentPosts }: Props) => {
   return (

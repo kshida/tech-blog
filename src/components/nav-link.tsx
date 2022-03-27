@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import {
   Link,
   useColorModeValue,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 
 type Props = {
   link: string,

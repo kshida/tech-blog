@@ -4,8 +4,7 @@ import {
   Heading,
   Text,
   Container,
-} from '@chakra-ui/react';
-import NavLink from 'components/nav-link';
+} from '@chakra-ui/react'
 
 const Disclaimer = () => {
   return (

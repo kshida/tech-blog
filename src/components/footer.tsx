@@ -6,9 +6,9 @@ import {
   Text,
   useColorModeValue,
   VisuallyHidden,
-} from '@chakra-ui/react';
-import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa';
-import { SiZenn } from 'react-icons/si';
+} from '@chakra-ui/react'
+import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { SiZenn } from 'react-icons/si'
 import NavLink from 'components/nav-link'
 
 type Props = {
@@ -42,8 +42,8 @@ const SocialButton = ({
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
     </chakra.button>
-  );
-};
+  )
+}
 
 const Footer = () => {
   return (
@@ -93,7 +93,7 @@ const Footer = () => {
         </Container>
       </Box>
     </Box>
-  );
+  )
 }
 
 export default Footer

@@ -14,7 +14,7 @@ import {
   SpaceProps,
   SimpleGrid,
   Container,
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 
 type Props = {
   pagePosts: Post[],
@@ -22,8 +22,8 @@ type Props = {
 }
 
 interface IBlogTags {
-  tags: Array<string>;
-  marginTop?: SpaceProps['marginTop'];
+  tags: Array<string>
+  marginTop?: SpaceProps['marginTop']
 }
 
 const BlogTags: React.FC<IBlogTags> = (props) => {
@@ -34,11 +34,11 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
           <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
             {tag}
           </Tag>
-        );
+        )
       })}
     </HStack>
-  );
-};
+  )
+}
 
 const Posts = ({ pagePosts, totalCount }: Props) => {
   return (
@@ -79,8 +79,8 @@ const Posts = ({ pagePosts, totalCount }: Props) => {
 
 export default Posts
 
-export const getStaticProps = async ( context: { params: { page: string; }; } ) => {
-  const page = +context.params.page;
+export const getStaticProps = async ( context: { params: { page: string } } ) => {
+  const page = +context.params.page
   const offset = PER_PAGE * (page - 1)
   const posts = getPagePosts([
     'title',
