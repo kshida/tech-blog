@@ -30,7 +30,6 @@ const Pagination = ({ totalCount }: Props) => {
               px={4}
               py={3}
               rounded={'full'}
-              bg={'#6d8cf9'}
               margin={'0 5px'}
               _hover={{
                 textDecoration: 'none',

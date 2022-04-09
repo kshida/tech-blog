@@ -31,7 +31,12 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
         return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
+          <Tag
+            size={'md'}
+            variant="solid"
+            bg={'#E0A6AF'}
+            color={'#333333'}
+            key={tag}>
             {tag}
           </Tag>
         )
