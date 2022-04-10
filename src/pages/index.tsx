@@ -12,6 +12,9 @@ import {
   SpaceProps,
   SimpleGrid,
   Container,
+  Flex,
+  useColorModeValue,
+  VStack,
 } from '@chakra-ui/react'
 
 type Props = {
@@ -48,25 +51,41 @@ const Index = ({ recentPosts }: Props) => {
       <Layout>
         <Box p={10}>
           <Container maxW={'5xl'} mt='10' mb='10'>
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
+            <SimpleGrid columns={{ base: 1 }} spacing={10}>
               {recentPosts.map((post) => (
-                // ブログカード
-                <Box key={post.slug} borderWidth='1px' borderRadius='lg' overflow='hidden'>
+                <Box key={post.slug} borderWidth='1px' borderRadius='lg'>
                   <Link href={`/posts/${post.slug}`} textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                    <Image
-                      src={ post.coverImage }
-                      alt="Cover Image"
-                      objectFit="contain"
-                    />
-                    <Box p='6'>
-                      <BlogTags tags={['Engineering', 'Product']} marginTop="3" />
-                      <Heading fontSize="xl" marginTop="2">
-                        { post.title }
-                      </Heading>
-                      <Text color={'gray.500'} marginTop="2">
-                        { post.date }
-                      </Text>
-                    </Box>
+                    <Flex
+                      boxShadow={'lg'}
+                      maxW={'initial'}
+                      direction={{ base: 'column', md: 'row' }}
+                      width={'full'}
+                      justifyContent={'space-between'}
+                      position={'relative'}
+                      borderWidth='1px'
+                      borderRadius='lg'
+                      bg={useColorModeValue('white', 'gray.800')}>
+                     <Image
+                       src={ post.coverImage }
+                       alt="Cover Image"
+                       objectFit="cover"
+                       maxW={{ base: 'full', md: '20vw'}}
+                     />
+                     <VStack
+                       width={'full'}
+                       spacing={6}
+                       align='stretch'>
+                      <Box p='6'>
+                        <Heading fontSize="xl" marginTop="2">
+                          { post.title }
+                        </Heading>
+                        <BlogTags tags={['Engineering', 'Product']} marginTop="3" />
+                        <Text color={'gray.500'} marginTop="2">
+                          { post.date }
+                        </Text>
+                      </Box>
+                     </VStack>
+                    </Flex>
                   </Link>
                 </Box>
               ))}
