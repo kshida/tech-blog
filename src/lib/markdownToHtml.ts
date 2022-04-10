@@ -1,17 +1,27 @@
-import { remark } from 'remark'
-import html from 'remark-html'
-import slug from 'remark-slug'
-import toc from 'remark-toc'
+import { unified } from 'unified'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeSlug from 'rehype-slug'
+import rehypeStringify from 'rehype-stringify'
+import remarkToc from 'remark-toc'
+import * as shiki from 'shiki'
+import rehypeShiki from '@leafac/rehype-shiki'
 
 export default async function markdownToHtml(markdown: string) {
-  const result = await remark()
-    .use(slug)
-    .use(toc, {
+  const result = unified()
+    .use(remarkToc, {
       heading: '目次',
-      prefix: 'user-content-',
       maxDepth: 2
     })
-    .use(html)
-    .process(markdown)
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeSlug)
+    .use(rehypeShiki, {
+      highlighter: await shiki.getHighlighter({
+        theme: 'nord',
+      }),
+    })
+    .use(rehypeStringify)
+    .processSync(markdown)
   return result.toString()
 }
