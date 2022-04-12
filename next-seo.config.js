@@ -1,10 +1,10 @@
 export default {
-  titleTemplate: '%s | プログラミングを知るはプログラミングを行うに如かず',
-  defaultTitle: 'プログラミングを知るはプログラミングを行うに如かず',
+  titleTemplate: '%s | kshida\'s blog',
+  defaultTitle: 'kshida\'s blog',
   description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
   openGraph: {
-    site_name: 'プログラミングを知るはプログラミングを行うに如かず',
-    title: 'プログラミングを知るはプログラミングを行うに如かず',
+    site_name: 'kshida\'s blog',
+    title: 'kshida\'s blog',
     type: 'website',
     description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
     url: 'https://programming-jissen.com/',
