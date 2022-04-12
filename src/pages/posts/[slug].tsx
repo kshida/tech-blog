@@ -38,7 +38,6 @@ const Post = ({ post }: Props) => {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                author={post.author}
               />
               <PostBody content={post.content} />
             </article>
