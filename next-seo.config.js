@@ -7,7 +7,7 @@ export default {
     title: 'kshida\'s blog',
     type: 'website',
     description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
-    url: 'https://programming-jissen.com/',
+    url: '',
     locale: 'ja_JP',
     images: [
       {
