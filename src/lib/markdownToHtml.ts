@@ -1,11 +1,11 @@
-import { unified } from 'unified'
-import remarkParse from 'remark-parse'
-import remarkRehype from 'remark-rehype'
+import rehypeShiki from '@leafac/rehype-shiki'
 import rehypeSlug from 'rehype-slug'
 import rehypeStringify from 'rehype-stringify'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
 import remarkToc from 'remark-toc'
 import * as shiki from 'shiki'
-import rehypeShiki from '@leafac/rehype-shiki'
+import { unified } from 'unified'
 
 export default async function markdownToHtml(markdown: string) {
   const result = unified()

@@ -1,10 +1,10 @@
-import Layout from 'components/layout'
 import {
   Box,
   Heading,
   Text,
   Container,
 } from '@chakra-ui/react'
+import Layout from 'components/layout'
 import NavLink from 'components/nav-link'
 
 const PrivacyPolicy = () => {

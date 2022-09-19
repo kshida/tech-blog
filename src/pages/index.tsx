@@ -1,7 +1,4 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import Layout from "components/layout";
-import { getPagePosts } from "lib/api";
-import Post from "types/post";
 import {
   Box,
   Heading,
@@ -10,6 +7,7 @@ import {
   Text,
   HStack,
   Tag,
+  // eslint-disable-next-line import/named
   SpaceProps,
   SimpleGrid,
   Container,
@@ -17,6 +15,9 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import Layout from "components/layout";
+import { getPagePosts } from "lib/api";
+import Post from "types/post";
 
 type Props = {
   recentPosts: Post[];
