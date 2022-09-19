@@ -48,10 +48,10 @@ export function getAllPosts(fields: string[] = []) {
 
 export function getPagePosts(fields: string[] = [], offset: number = 1, limit: number = PER_PAGE) {
   const posts = getAllPosts(fields)
-  const pagePosts = posts.slice(offset, (offset + limit))
+  const pagePosts = posts.slice(offset, offset + limit)
   const totalCount = posts.length
   return {
     pagePosts: pagePosts,
-    totalCount: totalCount
+    totalCount: totalCount,
   }
 }

@@ -1,10 +1,10 @@
 export default {
-  titleTemplate: '%s | kshida\'s blog',
-  defaultTitle: 'kshida\'s blog',
+  titleTemplate: "%s | kshida's blog",
+  defaultTitle: "kshida's blog",
   description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
   openGraph: {
-    site_name: 'kshida\'s blog',
-    title: 'kshida\'s blog',
+    site_name: "kshida's blog",
+    title: "kshida's blog",
     type: 'website',
     description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
     url: '',
@@ -23,4 +23,4 @@ export default {
     site: '@kshida39',
     cardType: 'summary_large_image',
   },
-};
+}

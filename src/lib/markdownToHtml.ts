@@ -11,7 +11,7 @@ export default async function markdownToHtml(markdown: string) {
   const result = unified()
     .use(remarkToc, {
       heading: '目次',
-      maxDepth: 2
+      maxDepth: 2,
     })
     .use(remarkParse)
     .use(remarkRehype)

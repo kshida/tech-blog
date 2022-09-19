@@ -1,18 +1,18 @@
 export const Links = [
-  { 
+  {
     title: 'Home',
-    slug: '/'
+    slug: '/',
   },
-  { 
+  {
     title: 'Posts',
-    slug: '/page/1'
+    slug: '/page/1',
   },
-  // { 
+  // {
   //   title: 'Book Review',
   //   slug: 'book_review'
   // },
-  { 
+  {
     title: 'Profile',
-    slug: '/profile'
-  }
+    slug: '/profile',
+  },
 ]

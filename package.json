@@ -6,7 +6,8 @@
     "start": "next start",
     "typecheck": "tsc",
     "lint": "next lint --dir src",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.5",
@@ -40,8 +41,10 @@
     "autoprefixer": "10.4.0",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
+    "eslint-config-prettier": "^8.5.0",
     "next-sitemap": "^2.5.14",
     "postcss": "8.4.5",
+    "prettier": "^2.7.1",
     "tailwindcss": "3.0.5"
   }
 }

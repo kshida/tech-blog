@@ -12,7 +12,7 @@ const Layout = ({ children }: Props) => {
     <>
       <Meta />
       <Header />
-      { children }
+      {children}
       <Footer />
     </>
   )

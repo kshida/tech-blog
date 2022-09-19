@@ -1,28 +1,22 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import {
-  Link,
-  useColorModeValue,
-  ListItem,
-  UnorderedList,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
-import { PER_PAGE } from "lib/constants";
+import { Link, useColorModeValue, ListItem, UnorderedList } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { PER_PAGE } from 'lib/constants'
 
 type Props = {
-  totalCount: number;
-};
+  totalCount: number
+}
 
-const range = (start: number, end: number) =>
-  [...Array(end - start + 1)].map((_, i) => start + i);
+const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
 
 const Pagination = ({ totalCount }: Props) => {
   return (
     <UnorderedList
-      listStyleType={"none"}
-      display={"inline-flex"}
-      width={"100vw"}
-      margin={"20px auto"}
-      justifyContent={"center"}
+      listStyleType={'none'}
+      display={'inline-flex'}
+      width={'100vw'}
+      margin={'20px auto'}
+      justifyContent={'center'}
     >
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
         <ListItem key={index}>
@@ -30,11 +24,11 @@ const Pagination = ({ totalCount }: Props) => {
             <Link
               px={4}
               py={3}
-              rounded={"full"}
-              margin={"0 5px"}
+              rounded={'full'}
+              margin={'0 5px'}
               _hover={{
-                textDecoration: "none",
-                bg: useColorModeValue("gray.200", "gray.700"),
+                textDecoration: 'none',
+                bg: useColorModeValue('gray.200', 'gray.700'),
               }}
             >
               {number}
@@ -43,7 +37,7 @@ const Pagination = ({ totalCount }: Props) => {
         </ListItem>
       ))}
     </UnorderedList>
-  );
-};
+  )
+}
 
-export default Pagination;
+export default Pagination
