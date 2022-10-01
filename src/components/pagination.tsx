@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useColorModeValue, ListItem, UnorderedList } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { PER_PAGE } from 'lib/constants'
+import { PER_PAGE } from '@/lib/constants'
 
 type Props = {
   totalCount: number
@@ -9,7 +9,7 @@ type Props = {
 
 const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
 
-const Pagination = ({ totalCount }: Props) => {
+export const Pagination = ({ totalCount }: Props) => {
   return (
     <UnorderedList
       listStyleType={'none'}
@@ -39,5 +39,3 @@ const Pagination = ({ totalCount }: Props) => {
     </UnorderedList>
   )
 }
-
-export default Pagination

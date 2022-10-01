@@ -13,8 +13,8 @@ import {
 } from '@chakra-ui/react'
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiZenn } from 'react-icons/si'
-import NavLink from 'components/nav-link'
-import { Links } from 'lib/links'
+import { NavLink } from '@/components/NavLink'
+import { Links } from '@/lib/links'
 
 type Props = {
   label: string
@@ -47,7 +47,7 @@ const SocialButton = ({ children, label, href }: Props) => {
   )
 }
 
-const Header = () => {
+export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
@@ -124,5 +124,3 @@ const Header = () => {
     </>
   )
 }
-
-export default Header

@@ -15,9 +15,9 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import Layout from 'components/layout'
-import { getPagePosts } from 'lib/api'
-import Post from 'types/post'
+import { Layout } from '@/components/Layout'
+import { getPagePosts } from '@/lib/api'
+import Post from '@/types/post'
 
 type Props = {
   recentPosts: Post[]

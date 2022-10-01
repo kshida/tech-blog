@@ -8,7 +8,7 @@ type Props = {
   slug?: string
 }
 
-const CoverImage = ({ title, src, slug }: Props) => {
+export const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
     <img
       src={src}
@@ -30,5 +30,3 @@ const CoverImage = ({ title, src, slug }: Props) => {
     </div>
   )
 }
-
-export default CoverImage

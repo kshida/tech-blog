@@ -1,6 +1,6 @@
-import CoverImage from 'components/cover-image'
-import DateFormatter from 'components/date-formatter'
-import PostTitle from 'components/post-title'
+import { CoverImage } from '@/components/CoverImage'
+import { DateFormatter } from '@/components/DateFormatter'
+import { PostTitle } from '@/components/PostTitle'
 
 type Props = {
   title: string
@@ -8,7 +8,7 @@ type Props = {
   date: string
 }
 
-const PostHeader = ({ title, coverImage, date }: Props) => {
+export const PostHeader = ({ title, coverImage, date }: Props) => {
   return (
     <>
       <div className='max-w-2xl mx-auto'>
@@ -23,5 +23,3 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
     </>
   )
 }
-
-export default PostHeader

@@ -9,7 +9,7 @@ type Props = {
   children: React.ReactNode
 }
 
-const NavLink = ({ link, isRichStyle, isTargetBlank = false, children }: Props) => {
+export const NavLink = ({ link, isRichStyle, isTargetBlank = false, children }: Props) => {
   return (
     <NextLink href={link} passHref>
       {isRichStyle ? (
@@ -33,5 +33,3 @@ const NavLink = ({ link, isRichStyle, isTargetBlank = false, children }: Props) 
     </NextLink>
   )
 }
-
-export default NavLink

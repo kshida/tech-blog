@@ -1,7 +1,7 @@
 import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import NavLink from 'components/nav-link'
+import { NavLink } from '@/components/NavLink'
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Box
       px={6}
@@ -31,5 +31,3 @@ const Footer = () => {
     </Box>
   )
 }
-
-export default Footer

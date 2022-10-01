@@ -15,11 +15,11 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import Layout from 'components/layout'
-import Pagination from 'components/pagination'
-import { getAllPosts, getPagePosts } from 'lib/api'
-import { PER_PAGE } from 'lib/constants'
-import Post from 'types/post'
+import { Layout } from '@/components/Layout'
+import { Pagination } from '@/components/Pagination'
+import { getAllPosts, getPagePosts } from '@/lib/api'
+import { PER_PAGE } from '@/lib/constants'
+import Post from '@/types/post'
 
 type Props = {
   pagePosts: Post[]

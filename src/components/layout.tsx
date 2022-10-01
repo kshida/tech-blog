@@ -1,13 +1,13 @@
-import Footer from 'components/footer'
-import Header from 'components/header'
-import Meta from 'components/meta'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
+import { Meta } from '@/components/Meta'
 
 type Props = {
   preview?: boolean
   children: React.ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: Props) => {
   return (
     <>
       <Meta />
@@ -17,5 +17,3 @@ const Layout = ({ children }: Props) => {
     </>
   )
 }
-
-export default Layout
