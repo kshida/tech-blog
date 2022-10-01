@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/lib/*": ["lib/*"],
+      "@/types/*": ["types/*"],
+      "@/styles/*": ["styles/*"]
+    },
     "target": "es5",
     "module": "esnext",
     "jsx": "preserve",
