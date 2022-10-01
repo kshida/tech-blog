@@ -3,9 +3,11 @@
     "baseUrl": "src",
     "paths": {
       "@/components/*": ["components/*"],
+      "@/features/*": ["features/*"],
       "@/libs/*": ["libs/*"],
       "@/types/*": ["types/*"],
-      "@/styles/*": ["styles/*"]
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"]
     },
     "target": "es5",
     "module": "esnext",
