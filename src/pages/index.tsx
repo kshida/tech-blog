@@ -16,7 +16,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { Layout } from '@/components/Layout'
-import { getPagePosts } from '@/lib/api'
+import { getPagePosts } from '@/libs/api'
 import Post from '@/types/post'
 
 interface Props {

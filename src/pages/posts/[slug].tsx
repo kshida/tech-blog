@@ -7,10 +7,10 @@ import { Layout } from '@/components/Layout'
 import { PostBody } from '@/components/PostBody'
 import { PostHeader } from '@/components/PostHeader'
 import { PostTitle } from '@/components/PostTitle'
-import { getPostBySlug, getAllPosts } from '@/lib/api'
-import { BLOG_NAME } from '@/lib/constants'
-import markdownToHtml from '@/lib/markdownToHtml'
+import { BLOG_NAME } from '@/libs/constants'
+import markdownToHtml from '@/libs/markdownToHtml'
 import PostType from '@/types/post'
+import { getPostBySlug, getAllPosts } from 'libs/api'
 
 interface Props {
   post: PostType

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { HOME_OG_IMAGE_URL } from '@/lib/constants'
+import { HOME_OG_IMAGE_URL } from '@/libs/constants'
 
 export const Meta: React.FC = () => {
   return (

@@ -14,7 +14,7 @@ import {
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiZenn } from 'react-icons/si'
 import { NavLink } from '@/components/NavLink'
-import { Links } from '@/lib/links'
+import { Links } from '@/libs/links'
 
 interface Props {
   label: string

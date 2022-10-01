@@ -17,9 +17,9 @@ import {
 } from '@chakra-ui/react'
 import { Layout } from '@/components/Layout'
 import { Pagination } from '@/components/Pagination'
-import { getAllPosts, getPagePosts } from '@/lib/api'
-import { PER_PAGE } from '@/lib/constants'
+import { PER_PAGE } from '@/libs/constants'
 import Post from '@/types/post'
+import { getAllPosts, getPagePosts } from 'libs/api'
 
 interface Props {
   pagePosts: Post[]

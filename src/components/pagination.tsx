@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Link, useColorModeValue, ListItem, UnorderedList } from '@chakra-ui/react'
 import NextLink from 'next/link'
-import { PER_PAGE } from '@/lib/constants'
+import { PER_PAGE } from '@/libs/constants'
 
 interface Props {
   totalCount: number
