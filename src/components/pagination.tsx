@@ -3,13 +3,13 @@ import { Link, useColorModeValue, ListItem, UnorderedList } from '@chakra-ui/rea
 import NextLink from 'next/link'
 import { PER_PAGE } from '@/lib/constants'
 
-type Props = {
+interface Props {
   totalCount: number
 }
 
 const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
 
-export const Pagination = ({ totalCount }: Props) => {
+export const Pagination: React.FC<Props> = ({ totalCount }) => {
   return (
     <UnorderedList
       listStyleType={'none'}

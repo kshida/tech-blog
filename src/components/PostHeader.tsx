@@ -2,13 +2,13 @@ import { CoverImage } from '@/components/CoverImage'
 import { DateFormatter } from '@/components/DateFormatter'
 import { PostTitle } from '@/components/PostTitle'
 
-type Props = {
+interface Props {
   title: string
   coverImage: string
   date: string
 }
 
-export const PostHeader = ({ title, coverImage, date }: Props) => {
+export const PostHeader: React.FC<Props> = ({ title, coverImage, date }) => {
   return (
     <>
       <div className='max-w-2xl mx-auto'>

@@ -1,3 +1,4 @@
+import { GetStaticPaths } from 'next'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -11,11 +12,11 @@ import { BLOG_NAME } from '@/lib/constants'
 import markdownToHtml from '@/lib/markdownToHtml'
 import PostType from '@/types/post'
 
-type Props = {
+interface Props {
   post: PostType
 }
 
-const Post = ({ post }: Props) => {
+const Post: React.FC<Props> = ({ post }) => {
   const router = useRouter()
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
@@ -46,7 +47,7 @@ const Post = ({ post }: Props) => {
 
 export default Post
 
-type Params = {
+interface Params {
   params: {
     slug: string
   }
@@ -74,7 +75,7 @@ export async function getStaticProps({ params }: Params) {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const posts = getAllPosts(['slug'])
 
   return {

@@ -2,12 +2,12 @@ import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Meta } from '@/components/Meta'
 
-type Props = {
+interface Props {
   preview?: boolean
   children: React.ReactNode
 }
 
-export const Layout = ({ children }: Props) => {
+export const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Meta />

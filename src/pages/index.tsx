@@ -19,7 +19,7 @@ import { Layout } from '@/components/Layout'
 import { getPagePosts } from '@/lib/api'
 import Post from '@/types/post'
 
-type Props = {
+interface Props {
   recentPosts: Post[]
 }
 
@@ -42,7 +42,7 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
   )
 }
 
-const Index = ({ recentPosts }: Props) => {
+const Index: React.FC<Props> = ({ recentPosts }) => {
   return (
     <>
       <Layout>

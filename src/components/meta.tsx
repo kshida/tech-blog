@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { HOME_OG_IMAGE_URL } from '@/lib/constants'
 
-export const Meta = () => {
+export const Meta: React.FC = () => {
   return (
     <Head>
       <link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />

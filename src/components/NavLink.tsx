@@ -2,14 +2,19 @@
 import { Link, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
-type Props = {
+interface Props {
   link: string
   isRichStyle: boolean
   isTargetBlank?: boolean
   children: React.ReactNode
 }
 
-export const NavLink = ({ link, isRichStyle, isTargetBlank = false, children }: Props) => {
+export const NavLink: React.FC<Props> = ({
+  link,
+  isRichStyle,
+  isTargetBlank = false,
+  children,
+}) => {
   return (
     <NextLink href={link} passHref>
       {isRichStyle ? (

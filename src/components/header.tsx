@@ -16,13 +16,13 @@ import { SiZenn } from 'react-icons/si'
 import { NavLink } from '@/components/NavLink'
 import { Links } from '@/lib/links'
 
-type Props = {
+interface Props {
   label: string
   href: string
   children: React.ReactNode
 }
 
-const SocialButton = ({ children, label, href }: Props) => {
+const SocialButton: React.FC<Props> = ({ children, label, href }) => {
   return (
     <chakra.button
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}

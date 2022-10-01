@@ -1,9 +1,9 @@
-import { ReactNode, FunctionComponent } from 'react'
+import { ReactNode } from 'react'
 
-type Props = {
+interface Props {
   children?: ReactNode
 }
 
-export const Container: FunctionComponent = ({ children }: Props) => {
+export const Container: React.FC<Props> = ({ children }) => {
   return <div className='container mx-auto px-5'>{children}</div>
 }

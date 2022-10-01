@@ -2,13 +2,13 @@
 import cn from 'classnames'
 import Link from 'next/link'
 
-type Props = {
+interface Props {
   title: string
   src: string
   slug?: string
 }
 
-export const CoverImage = ({ title, src, slug }: Props) => {
+export const CoverImage: React.FC<Props> = ({ title, src, slug }) => {
   const image = (
     <img
       src={src}

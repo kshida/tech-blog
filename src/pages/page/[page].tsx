@@ -21,7 +21,7 @@ import { getAllPosts, getPagePosts } from '@/lib/api'
 import { PER_PAGE } from '@/lib/constants'
 import Post from '@/types/post'
 
-type Props = {
+interface Props {
   pagePosts: Post[]
   totalCount: number
 }
@@ -45,7 +45,7 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
   )
 }
 
-const Posts = ({ pagePosts, totalCount }: Props) => {
+const Posts: React.FC<Props> = ({ pagePosts, totalCount }) => {
   return (
     <>
       <Layout>
