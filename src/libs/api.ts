@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
-import { PER_PAGE } from '@/libs/constants'
+import { PER_PAGE } from '@/utils/constants'
 
 const postsDirectory = join(process.cwd(), '_posts')
 
