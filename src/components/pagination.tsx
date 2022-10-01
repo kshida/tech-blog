@@ -20,7 +20,7 @@ export const Pagination: React.FC<Props> = ({ totalCount }) => {
     >
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
         <ListItem key={index}>
-          <NextLink href={`/page/${number}`} passHref>
+          <NextLink href={`/posts/list/${number}`} passHref>
             <Link
               px={4}
               py={3}

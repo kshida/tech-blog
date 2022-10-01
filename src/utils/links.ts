@@ -5,7 +5,7 @@ export const Links = [
   },
   {
     title: 'Posts',
-    slug: '/page/1',
+    slug: '/posts/list/1',
   },
   // {
   //   title: 'Book Review',
