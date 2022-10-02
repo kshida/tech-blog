@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Container } from '@chakra-ui/react'
-import { Layout } from '../components/Layout'
-import { NavLink } from '../components/NavLink'
+import { Layout } from '@/components/Layout'
+import { NavLink } from '@/components/NavLink'
 
 export const PrivacyPolicyPage: React.FC = () => {
   return (

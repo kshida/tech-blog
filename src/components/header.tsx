@@ -11,9 +11,9 @@ import {
 } from '@chakra-ui/react'
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiZenn } from 'react-icons/si'
-import { NavLink } from '../components/NavLink'
-import { SocialButton } from '../components/SocialButton'
-import { Links } from '../utils/links'
+import { NavLink } from '@/components/NavLink'
+import { SocialButton } from '@/components/SocialButton'
+import { Links } from '@/utils/links'
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

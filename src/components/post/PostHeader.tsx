@@ -1,5 +1,5 @@
-import { DateFormatter } from '../DateFormatter'
-import { PostTitle } from './PostTitle'
+import { DateFormatter } from '@/components/DateFormatter'
+import { PostTitle } from '@/components/post/PostTitle'
 
 interface Props {
   title: string

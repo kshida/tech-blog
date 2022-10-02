@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Text, useColorModeValue } from '@chakra-ui/react'
-import { NavLink } from './NavLink'
+import { NavLink } from '@/components/NavLink'
 
 export const Footer: React.FC = () => {
   return (

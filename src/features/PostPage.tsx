@@ -1,11 +1,11 @@
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { Container } from '../components/Container'
-import { Layout } from '../components/Layout'
-import { PostBody, PostHeader, PostTitle } from '../components/post'
-import { PostType } from '../types/post'
-import { BLOG_NAME } from '../utils/constants'
+import { Container } from '@/components/Container'
+import { Layout } from '@/components/Layout'
+import { PostBody, PostHeader, PostTitle } from '@/components/post'
+import { PostType } from '@/types/post'
+import { BLOG_NAME } from '@/utils/constants'
 
 interface Props {
   post: PostType

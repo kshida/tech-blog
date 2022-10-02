@@ -1,8 +1,8 @@
 import { ParsedUrlQuery } from 'querystring'
 import { GetStaticProps } from 'next'
-import { PostPage } from '../../features/PostPage'
-import { markdownToHtml } from '../../libs/markdownToHtml'
-import { Items } from '../../types/post'
+import { PostPage } from '@/features/PostPage'
+import { markdownToHtml } from '@/libs/markdownToHtml'
+import { Items } from '@/types/post'
 import { getPostBySlug, getAllPosts } from 'libs/api'
 
 export default PostPage

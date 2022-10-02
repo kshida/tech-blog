@@ -1,5 +1,5 @@
-import { IndexPage } from '../features/IndexPage'
-import { getPagePosts } from '../libs/api'
+import { IndexPage } from '@/features/IndexPage'
+import { getPagePosts } from '@/libs/api'
 export default IndexPage
 
 export const getStaticProps = async () => {
