@@ -1,5 +1,5 @@
-import { PostListPage } from '@/features/PostListPage'
-import { PER_PAGE } from '@/utils/constants'
+import { PostListPage } from '../../../features/PostListPage'
+import { PER_PAGE } from '../../../utils/constants'
 import { getAllPosts, getPagePosts } from 'libs/api'
 
 export default PostListPage

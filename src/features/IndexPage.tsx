@@ -10,9 +10,9 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import { Layout } from '@/components/Layout'
-import { Tags } from '@/components/Tags'
-import { PostType } from '@/types/post'
+import { Layout } from '../components/Layout'
+import { Tags } from '../components/Tags'
+import { PostType } from '../types/post'
 
 interface Props {
   recentPosts: PostType[]

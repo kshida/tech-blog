@@ -1,5 +1,5 @@
 import { Box, Heading, Text, Container } from '@chakra-ui/react'
-import { Layout } from '@/components/Layout'
+import { Layout } from '../components/Layout'
 
 export const DisclaimerPage: React.FC = () => {
   return (
