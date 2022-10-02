@@ -2,12 +2,12 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "@/components/*": ["./src/components/*"],
-      "@/features/*": ["./src/features/*"],
-      "@/libs/*": ["./src/libs/*"],
-      "@/types/*": ["./src/types/*"],
-      "@/styles/*": ["./src/styles/*"],
-      "@/utils/*": ["./src/utils/*"]
+      "@/components/*": ["./components/*"],
+      "@/features/*": ["./features/*"],
+      "@/libs/*": ["./libs/*"],
+      "@/types/*": ["./types/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/utils/*": ["./utils/*"]
     },
     "target": "es5",
     "module": "esnext",
