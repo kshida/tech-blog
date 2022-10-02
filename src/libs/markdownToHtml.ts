@@ -7,7 +7,7 @@ import remarkToc from 'remark-toc'
 import * as shiki from 'shiki'
 import { unified } from 'unified'
 
-export default async function markdownToHtml(markdown: string) {
+export const markdownToHtml = async (markdown: string) => {
   const result = unified()
     .use(remarkToc, {
       heading: '目次',

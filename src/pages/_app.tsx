@@ -1,7 +1,7 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 import { AppProps } from 'next/app'
-import 'styles/index.css'
+import '@/styles/index.css'
 import SEO from '../../next-seo.config'
 
 const colors = {

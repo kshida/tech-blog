@@ -21,7 +21,7 @@ export const getStaticProps = async (context: { params: { page: string } }) => {
   }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = () => {
   const posts = getAllPosts(['slug'])
   const totalCount = posts.length
   const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)

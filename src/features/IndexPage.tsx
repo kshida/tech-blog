@@ -13,22 +13,20 @@ import {
 } from '@chakra-ui/react'
 import { BlogTags } from '@/components/BlogTags'
 import { Layout } from '@/components/Layout'
-import { Pagination } from '@/components/Pagination'
 import { PostType } from '@/types/post'
 
 interface Props {
-  pagePosts: PostType[]
-  totalCount: number
+  recentPosts: PostType[]
 }
 
-export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
+export const IndexPage: React.FC<Props> = ({ recentPosts }) => {
   return (
     <>
       <Layout>
         <Box p={10}>
           <Container maxW={'5xl'} mt='10' mb='10'>
             <SimpleGrid columns={{ base: 1 }} spacing={10}>
-              {pagePosts.map((post) => (
+              {recentPosts.map((post) => (
                 <Box key={post.slug} borderWidth='1px' borderRadius='lg'>
                   <Link
                     href={`/posts/${post.slug}`}
@@ -70,7 +68,6 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
             </SimpleGrid>
           </Container>
         </Box>
-        <Pagination totalCount={totalCount} />
       </Layout>
     </>
   )

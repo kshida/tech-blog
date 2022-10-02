@@ -1,18 +1,22 @@
-import { GetStaticPaths } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { PostPage } from '@/features/PostPage'
-import markdownToHtml from '@/libs/markdownToHtml'
+import { markdownToHtml } from '@/libs/markdownToHtml'
+import { Items } from '@/types/post'
 import { getPostBySlug, getAllPosts } from 'libs/api'
 
 export default PostPage
 
-interface Params {
-  params: {
-    slug: string
-  }
+interface Props {
+  post: Items
 }
 
-export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
+interface Params extends ParsedUrlQuery {
+  slug: string
+}
+
+export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
+  const post = getPostBySlug(params!.slug, [
     'title',
     'date',
     'slug',

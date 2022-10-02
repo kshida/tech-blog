@@ -1,27 +1,22 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { Items } from '@/types/post'
 import { PER_PAGE } from '@/utils/constants'
 
 const postsDirectory = join(process.cwd(), '_posts')
 
-export function getPostSlugs() {
+export const getPostSlugs = () => {
   return fs.readdirSync(postsDirectory)
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
+export const getPostBySlug = (slug: string, fields: string[] = []) => {
   const realSlug = slug.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
-  type Items = {
-    [key: string]: string
-  }
-
   const items: Items = {}
 
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug
@@ -29,7 +24,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
     if (field === 'content') {
       items[field] = content
     }
-
     if (typeof data[field] !== 'undefined') {
       items[field] = data[field]
     }
@@ -38,7 +32,7 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   return items
 }
 
-export function getAllPosts(fields: string[] = []) {
+export const getAllPosts = (fields: string[] = []) => {
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
@@ -46,7 +40,11 @@ export function getAllPosts(fields: string[] = []) {
   return posts
 }
 
-export function getPagePosts(fields: string[] = [], offset: number = 1, limit: number = PER_PAGE) {
+export const getPagePosts = (
+  fields: string[] = [],
+  offset: number = 1,
+  limit: number = PER_PAGE,
+) => {
   const posts = getAllPosts(fields)
   const pagePosts = posts.slice(offset, offset + limit)
   const totalCount = posts.length

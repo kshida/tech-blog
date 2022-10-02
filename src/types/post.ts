@@ -1,4 +1,4 @@
-type PostType = {
+export interface PostType {
   slug: string
   title: string
   date: string
@@ -10,4 +10,6 @@ type PostType = {
   content: string
 }
 
-export default PostType
+export interface Items {
+  [key: string]: string
+}

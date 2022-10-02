@@ -8,44 +8,12 @@ import {
   HStack,
   IconButton,
   useDisclosure,
-  chakra,
-  VisuallyHidden,
 } from '@chakra-ui/react'
 import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiZenn } from 'react-icons/si'
 import { NavLink } from '@/components/NavLink'
+import { SocialButton } from '@/components/SocialButton'
 import { Links } from '@/utils/links'
-
-interface Props {
-  label: string
-  href: string
-  children: React.ReactNode
-}
-
-const SocialButton: React.FC<Props> = ({ children, label, href }) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      target={'_blank'}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('#ceefe4', '#ceefe4'),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  )
-}
 
 export const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

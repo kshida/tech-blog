@@ -6,7 +6,7 @@ import { Layout } from '@/components/Layout'
 import { PostBody } from '@/components/PostBody'
 import { PostHeader } from '@/components/PostHeader'
 import { PostTitle } from '@/components/PostTitle'
-import PostType from '@/types/post'
+import { PostType } from '@/types/post'
 import { BLOG_NAME } from '@/utils/constants'
 
 interface Props {
