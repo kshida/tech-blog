@@ -42,7 +42,7 @@ export const getAllPosts = (fields: string[] = []) => {
 
 export const getPagePosts = (
   fields: string[] = [],
-  offset: number = 1,
+  offset: number = 0,
   limit: number = PER_PAGE,
 ) => {
   const posts = getAllPosts(fields)
