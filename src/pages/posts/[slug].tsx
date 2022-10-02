@@ -1,5 +1,5 @@
 import { ParsedUrlQuery } from 'querystring'
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticProps } from 'next'
 import { PostPage } from '@/features/PostPage'
 import { markdownToHtml } from '@/libs/markdownToHtml'
 import { Items } from '@/types/post'
@@ -16,15 +16,7 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
-  const post = getPostBySlug(params!.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
+  const post = getPostBySlug(params!.slug, ['title', 'date', 'slug', 'content', 'ogImage', 'tags'])
   const content = await markdownToHtml(post.content || '')
 
   return {
@@ -37,7 +29,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) 
   }
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = () => {
   const posts = getAllPosts(['slug'])
 
   return {

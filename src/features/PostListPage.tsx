@@ -3,7 +3,6 @@ import {
   Box,
   Heading,
   Link,
-  Image,
   Text,
   SimpleGrid,
   Container,
@@ -50,13 +49,11 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
                     >
                       <VStack width={'full'} spacing={6} align='stretch'>
                         <Box p='6'>
+                          <Text color={'gray.500'}>{post.date}</Text>
                           <Heading fontSize='xl' marginTop='2'>
                             {post.title}
                           </Heading>
-                          <Tags tags={['Engineering', 'Product']} marginTop='3' />
-                          <Text color={'gray.500'} marginTop='2'>
-                            {post.date}
-                          </Text>
+                          <Tags tags={post.tags} marginTop='5' />
                         </Box>
                       </VStack>
                     </Flex>

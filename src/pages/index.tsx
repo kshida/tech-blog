@@ -3,14 +3,7 @@ import { getPagePosts } from '@/libs/api'
 export default IndexPage
 
 export const getStaticProps = async () => {
-  const recentPosts = getPagePosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ]).pagePosts
+  const recentPosts = getPagePosts(['title', 'date', 'slug', 'tags']).pagePosts
 
   return {
     props: { recentPosts },

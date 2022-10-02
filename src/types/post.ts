@@ -8,6 +8,7 @@ export interface PostType {
     url: string
   }
   content: string
+  tags: string[]
 }
 
 export interface Items {

@@ -7,11 +7,7 @@ export default PostListPage
 export const getStaticProps = async (context: { params: { page: string } }) => {
   const page = +context.params.page
   const offset = PER_PAGE * (page - 1)
-  const posts = getPagePosts(
-    ['title', 'date', 'slug', 'author', 'coverImage', 'excerpt'],
-    offset,
-    PER_PAGE,
-  )
+  const posts = getPagePosts(['title', 'date', 'slug', 'tags'], offset, PER_PAGE)
 
   return {
     props: {
