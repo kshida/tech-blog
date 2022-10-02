@@ -5,12 +5,12 @@ import {
   SpaceProps,
 } from '@chakra-ui/react'
 
-interface BlogTags {
+interface Props {
   tags: Array<string>
   marginTop?: SpaceProps['marginTop']
 }
 
-export const BlogTags: React.FC<BlogTags> = (props) => {
+export const Tags: React.FC<Props> = (props) => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {

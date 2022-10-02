@@ -11,9 +11,9 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import { BlogTags } from '@/components/BlogTags'
 import { Layout } from '@/components/Layout'
 import { Pagination } from '@/components/Pagination'
+import { Tags } from '@/components/Tags'
 import { PostType } from '@/types/post'
 
 interface Props {
@@ -57,7 +57,7 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
                           <Heading fontSize='xl' marginTop='2'>
                             {post.title}
                           </Heading>
-                          <BlogTags tags={['Engineering', 'Product']} marginTop='3' />
+                          <Tags tags={['Engineering', 'Product']} marginTop='3' />
                           <Text color={'gray.500'} marginTop='2'>
                             {post.date}
                           </Text>

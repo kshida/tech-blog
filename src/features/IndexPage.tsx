@@ -11,8 +11,8 @@ import {
   useColorModeValue,
   VStack,
 } from '@chakra-ui/react'
-import { BlogTags } from '@/components/BlogTags'
 import { Layout } from '@/components/Layout'
+import { Tags } from '@/components/Tags'
 import { PostType } from '@/types/post'
 
 interface Props {
@@ -55,7 +55,7 @@ export const IndexPage: React.FC<Props> = ({ recentPosts }) => {
                           <Heading fontSize='xl' marginTop='2'>
                             {post.title}
                           </Heading>
-                          <BlogTags tags={['Engineering', 'Product']} marginTop='3' />
+                          <Tags tags={['Engineering', 'Product']} marginTop='3' />
                           <Text color={'gray.500'} marginTop='2'>
                             {post.date}
                           </Text>
