@@ -22,18 +22,16 @@ export const PostPage: React.FC<Props> = ({ post }) => {
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
-          <>
-            <article className='my-16'>
-              <Head>
-                <title>
-                  {post.title} | {BLOG_NAME}
-                </title>
-                <meta property='og:image' content={post.ogImage.url} />
-              </Head>
-              <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
-              <PostBody content={post.content} />
-            </article>
-          </>
+          <article>
+            <Head>
+              <title>
+                {post.title} | {BLOG_NAME}
+              </title>
+              <meta property='og:image' content={post.ogImage.url} />
+            </Head>
+            <PostHeader title={post.title} date={post.date} />
+            <PostBody content={post.content} />
+          </article>
         )}
       </Container>
     </Layout>

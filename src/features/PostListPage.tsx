@@ -25,9 +25,9 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
   return (
     <>
       <Layout>
-        <Box p={10}>
+        <Box>
           <Container maxW={'5xl'} mt='10' mb='10'>
-            <SimpleGrid columns={{ base: 1 }} spacing={10}>
+            <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={10}>
               {pagePosts.map((post) => (
                 <Box key={post.slug} borderWidth='1px' borderRadius='lg'>
                   <Link
@@ -40,18 +40,13 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
                       maxW={'initial'}
                       direction={{ base: 'column', md: 'row' }}
                       width={'full'}
+                      height={'100%'}
                       justifyContent={'space-between'}
                       position={'relative'}
                       borderWidth='1px'
                       borderRadius='lg'
                       bg={useColorModeValue('white', 'gray.800')}
                     >
-                      <Image
-                        src={post.coverImage}
-                        alt='Cover Image'
-                        objectFit='cover'
-                        maxW={{ base: 'full', md: '20vw' }}
-                      />
                       <VStack width={'full'} spacing={6} align='stretch'>
                         <Box p='6'>
                           <Heading fontSize='xl' marginTop='2'>
@@ -70,7 +65,9 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
             </SimpleGrid>
           </Container>
         </Box>
-        <Pagination totalCount={totalCount} />
+        <Box mb={'30px'}>
+          <Pagination totalCount={totalCount} />
+        </Box>
       </Layout>
     </>
   )
