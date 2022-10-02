@@ -27,6 +27,7 @@ export const NavLink: React.FC<Props> = ({
             textDecoration: 'none',
             bg: useColorModeValue('#ceefe4', '#ceefe4'),
           }}
+          _focus={{ boxShadow: 'none' }}
         >
           {children}
         </Link>

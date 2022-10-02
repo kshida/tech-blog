@@ -34,6 +34,7 @@ export const PostListPage: React.FC<Props> = ({ pagePosts, totalCount }) => {
                     href={`/posts/${post.slug}`}
                     textDecoration='none'
                     _hover={{ textDecoration: 'none' }}
+                    _focus={{ boxShadow: 'none' }}
                   >
                     <Flex
                       boxShadow={'lg'}

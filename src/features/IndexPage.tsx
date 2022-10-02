@@ -31,6 +31,7 @@ export const IndexPage: React.FC<Props> = ({ recentPosts }) => {
                     href={`/posts/${post.slug}`}
                     textDecoration='none'
                     _hover={{ textDecoration: 'none' }}
+                    _focus={{ boxShadow: 'none' }}
                   >
                     <Flex
                       boxShadow={'lg'}

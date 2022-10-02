@@ -29,6 +29,7 @@ export const Pagination: React.FC<Props> = ({ totalCount }) => {
                 textDecoration: 'none',
                 bg: useColorModeValue('gray.200', 'gray.700'),
               }}
+              _focus={{ boxShadow: 'none' }}
             >
               {number}
             </Link>
