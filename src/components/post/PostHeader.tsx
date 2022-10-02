@@ -1,6 +1,6 @@
 import { CoverImage } from '@/components/CoverImage'
 import { DateFormatter } from '@/components/DateFormatter'
-import { PostTitle } from '@/components/PostTitle'
+import { PostTitle } from '@/components/post/PostTitle'
 
 interface Props {
   title: string
