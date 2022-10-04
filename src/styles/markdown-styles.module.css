@@ -1,18 +1,39 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-base leading-relaxed;
 }
 
-.markdown p,
-.markdown ul,
-.markdown ol,
-.markdown blockquote {
+.markdown p {
   @apply my-6;
 }
 
+.markdown ul {
+  @apply my-6 list-disc pl-4;
+}
+
+.markdown ol {
+  @apply my-6;
+}
+
+.markdown a {
+  @apply text-[#0f83fd] hover:underline hover:underline-offset-2;
+}
+
+.markdown blockquote {
+  @apply my-6 border-l-4 border-solid border-[#9dacb7] pl-3 text-[#505c64];
+}
+
+.markdown code {
+  @apply bg-[#215aa012] py-1 px-2 text-sm rounded;
+}
+
+.markdown pre {
+  @apply p-4 rounded-lg;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-2xl pt-12 pb-4 leading-snug font-bold border-b-4 border-solid border-[#9dd3a8];
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-xl pt-8 pb-4 leading-snug font-bold border-b-2 border-solid border-[#9dd3a8];
 }

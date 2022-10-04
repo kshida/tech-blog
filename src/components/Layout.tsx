@@ -12,7 +12,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Meta />
       <Header />
-      {children}
+      <div className='min-h-[calc(100vh-64px-48px)]'>{children}</div>
       <Footer />
     </>
   )

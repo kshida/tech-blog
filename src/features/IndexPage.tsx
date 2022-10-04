@@ -23,7 +23,7 @@ export const IndexPage: React.FC<Props> = ({ recentPosts }) => {
     <>
       <Layout>
         <Box>
-          <Container maxW={'5xl'} mt='10' mb='10'>
+          <Container maxW={'5xl'} pt='10' pb='10'>
             <SimpleGrid columns={{ base: 1, sm: 2 }} spacing={10}>
               {recentPosts.map((post) => (
                 <Box key={post.slug} borderWidth='1px' borderRadius='lg'>

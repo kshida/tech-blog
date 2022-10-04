@@ -6,7 +6,7 @@ interface Props {
 
 export const PostBody: React.FC<Props> = ({ content }) => {
   return (
-    <div className='max-w-2xl mx-auto'>
+    <div className='max-w-[790px] mx-auto px-10 pb-10 bg-white rounded-lg'>
       <div className={markdownStyles['markdown']} dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   )
