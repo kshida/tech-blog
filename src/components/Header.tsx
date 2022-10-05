@@ -9,7 +9,7 @@ import {
   IconButton,
   useDisclosure,
 } from '@chakra-ui/react'
-import { FaGithub, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { SiZenn } from 'react-icons/si'
 import { NavLink } from '@/components/NavLink'
 import { SocialButton } from '@/components/SocialButton'
@@ -45,9 +45,6 @@ export const Header = () => {
               <SocialButton label={'Zenn'} href={'https://zenn.dev/kshida'}>
                 <SiZenn />
               </SocialButton>
-              <SocialButton label={'YouTube'} href={'#'}>
-                <FaYoutube />
-              </SocialButton>
             </Stack>
           </HStack>
           <IconButton
@@ -80,9 +77,6 @@ export const Header = () => {
                 </SocialButton>
                 <SocialButton label={'Zenn'} href={'https://zenn.dev/kshida'}>
                   <SiZenn />
-                </SocialButton>
-                <SocialButton label={'YouTube'} href={'#'}>
-                  <FaYoutube />
                 </SocialButton>
               </Stack>
             </Stack>
