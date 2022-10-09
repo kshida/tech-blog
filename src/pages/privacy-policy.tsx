@@ -1,2 +1,2 @@
-import { PrivacyPolicyPage } from 'features/PrivacyPolicyPage'
+import { PrivacyPolicyPage } from '@/features/PrivacyPolicyPage'
 export default PrivacyPolicyPage

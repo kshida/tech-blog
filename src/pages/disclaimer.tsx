@@ -1,2 +1,2 @@
-import { DisclaimerPage } from 'features/DisclaimerPage'
+import { DisclaimerPage } from '@/features/DisclaimerPage'
 export default DisclaimerPage
