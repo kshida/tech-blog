@@ -27,7 +27,7 @@
 }
 
 .markdown pre {
-  @apply p-4 rounded-lg;
+  @apply p-4 rounded-lg overflow-auto;
 }
 
 .markdown h2 {
