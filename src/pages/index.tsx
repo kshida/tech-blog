@@ -1,9 +1,17 @@
+import dayjs from 'dayjs'
 import { IndexPage } from '@/features/IndexPage'
-import { getPagePosts } from '@/libs/api'
+import { getPagePosts, getZennRssFeed } from '@/libs/api'
 export default IndexPage
 
 export const getStaticProps = async () => {
-  const recentPosts = getPagePosts(['title', 'date', 'slug', 'tags']).pagePosts
+  const pagePosts = getPagePosts(['title', 'date', 'slug', 'tags']).pagePosts
+  const zennPosts = await getZennRssFeed()
+  const recentPosts = pagePosts
+    .concat(zennPosts.pagePosts)
+    .sort((a, b) => {
+      return dayjs(a.date).isAfter(b.date) ? -1 : 1
+    })
+    .slice(0, 10)
 
   return {
     props: { recentPosts },

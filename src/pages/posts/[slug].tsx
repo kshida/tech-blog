@@ -2,13 +2,13 @@ import { ParsedUrlQuery } from 'querystring'
 import { GetStaticProps } from 'next'
 import { PostPage } from '@/features/PostPage'
 import { markdownToHtml } from '@/libs/markdownToHtml'
-import { Items } from '@/types/post'
+import { PostType } from '@/types/post'
 import { getPostBySlug, getAllPosts } from 'libs/api'
 
 export default PostPage
 
 interface Props {
-  post: Items
+  post: PostType
 }
 
 interface Params extends ParsedUrlQuery {
