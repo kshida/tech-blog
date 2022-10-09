@@ -18,8 +18,8 @@ Next.js で実装している時に気づいたのですが、SSG している�
 
 ### 環境
 
-- React.js：
-- Next.js：
+- "react": "^18.2.0"
+- "next": "^12.0.10"
 
 ## next.config.js の experimental.scrollRestoration を true にする
 
