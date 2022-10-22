@@ -37,12 +37,12 @@ Next.js に RSS フィードを追加するにあたり、以下 2 つの記事�
 - [Next.js で動的に RSS フィードを生成する](https://zenn.dev/catnose99/articles/c7754ba6e4adac)
 
 こちらは Zenn の catnose さんの記事です。  
-rss を利用する場合はこちらをご確認ください。
+rss を利用する or SSR で利用する場合はこちらをご確認ください。
 
 - [Next.js に feed を導入して RSS と Atom のフィードを生成しよう | fwywd（フュード）powered by キカガク](https://fwywd.com/tech/next-feed-rss-atom)
 
 こちらはキカガクの吉崎 亮介さんの記事です。  
-feed を利用する場合はこちらをご確認ください。
+feed を利用する or SSG で利用する場合はこちらをご確認ください。
 
 ## feed を導入し、RSS フィードを設定する
 
@@ -52,40 +52,17 @@ feed を利用する場合はこちらをご確認ください。
 yarn add feed
 ```
 
-次に、RSS フィード用を出力するためのページを用意します。  
-今回は `/feed` にアクセスしたら RSS フィードを生成するようにしましょう。  
-先ほどの catnose さんの記事を参考にしています。
-
-```tsx
-// src/pages/feed.tsx
-import { GetServerSidePropsContext } from 'next'
-import { generateRssFeed } from '@/libs/feed'
-
-const NoPage = () => null
-export default NoPage
-
-export const getServerSideProps = async ({ res }: GetServerSidePropsContext) => {
-  // RSSフィードを生成する処理
-  const xml = await generateRssFeed()
-
-  res.statusCode = 200
-  res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate') // 24時間キャッシュ
-  res.setHeader('Content-Type', 'text/xml')
-  res.end(xml) // レスポンスを返す
-
-  return { props: {} }
-}
-```
-
-そして、公式のサンプルを参考に、RSS フィードを生成する処理を実装します。
+次に、公式のサンプルを参考に、RSS フィードを生成する処理を実装しましょう。  
+私の場合は SSG なので、XML ファイルを生成して配置するようにします。
 
 ```tsx
 // src/libs/feed.ts
+import fs from 'fs'
 import dayjs from 'dayjs'
 import { Feed } from 'feed'
 import { getAllPosts } from './api'
 
-export const generateRssFeed = async () => {
+export const generateRssFeed = () => {
   const baseUrl = 'https://kshida-blog.com'
 
   const feed = new Feed({
@@ -112,13 +89,28 @@ export const generateRssFeed = async () => {
       date: dayjs(post.date).toDate(),
     })
   })
-  // RSS 2.0
-  return feed.rss2()
+  // RSSフィード情報を public/rss 配下に保存する
+  fs.mkdirSync('./public/rss', { recursive: true })
+  fs.writeFileSync('./public/rss/feed.xml', feed.rss2())
 }
 ```
 
-最後の `feed.rss2()` についてですが、今回は `RSS 2.0` 形式で生成しています。  
-もしも `Atom 1.0` にしたい場合は `feed.atom1()` 、`JSON Feed 1.0` にしたい場合は `feed.json1()` としてください。
+`feed.rss2()` について補足です。  
+今回は `RSS 2.0` 形式で生成していますが、もしも `Atom 1.0` にしたい場合は `feed.atom1()`に 、`JSON Feed 1.0` にしたい場合は `feed.json1()` としてください。
+
+最後に、`index.tsx` の中で先ほどの処理を呼ぶようにしましょう。
+
+```tsx
+// src/pages/index.tsx
+export const getStaticProps = async () => {
+  generateRssFeed() // RSSフィードを生成する
+  （中略）
+
+  return {
+    props: { recentPosts },
+  }
+}
+```
 
 それでは確認してみます。
 `/feed` にアクセスすると、以下のように RSS フィードが表示されました。

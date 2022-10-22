@@ -1,8 +1,9 @@
+import fs from 'fs'
 import dayjs from 'dayjs'
 import { Feed } from 'feed'
 import { getAllPosts } from './api'
 
-export const generateRssFeed = async () => {
+export const generateRssFeed = () => {
   const baseUrl = 'https://kshida-blog.com'
 
   const feed = new Feed({
@@ -29,6 +30,7 @@ export const generateRssFeed = async () => {
       date: dayjs(post.date).toDate(),
     })
   })
-  // RSS 2.0
-  return feed.rss2()
+  // RSSフィード情報を public/rss 配下に保存する
+  fs.mkdirSync('./public/rss', { recursive: true })
+  fs.writeFileSync('./public/rss/feed.xml', feed.rss2())
 }
