@@ -147,6 +147,9 @@ export const getStaticProps = async () => {
 Next.js に RSS フィードを追加してみました。  
 `feed` や`rss`を使うと簡単に追加できて便利ですね。
 
+フィードを生成したら以下のサイトで確認もお忘れなく〜。  
+[W3C Feed Validation Service, for Atom and RSS](https://validator.w3.org/feed/)
+
 今回参考にした記事を再掲して終わりです。
 
 - [Next.js で動的に RSS フィードを生成する](https://zenn.dev/catnose99/articles/c7754ba6e4adac)

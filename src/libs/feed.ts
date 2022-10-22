@@ -14,7 +14,7 @@ export const generateRssFeed = () => {
     language: 'ja',
     copyright: "©2022 kshida's blog",
     updated: dayjs().toDate(),
-    feed: `${baseUrl}/feed`,
+    feed: `${baseUrl}/rss/feed.xml`,
     author: {
       name: 'K.Shida',
     },
