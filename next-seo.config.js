@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 export default {
   titleTemplate: "%s | kshida's blog",
   defaultTitle: "kshida's blog",
