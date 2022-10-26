@@ -8,7 +8,7 @@ export default {
     title: "kshida's blog",
     type: 'website',
     description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
-    url: '',
+    url: 'https://kshida-blog.com',
     locale: 'ja_JP',
     images: [
       {
