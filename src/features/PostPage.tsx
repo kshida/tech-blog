@@ -32,10 +32,10 @@ export const PostPage: React.FC<Props> = ({ post }) => {
                 url: `${BASE_URL}/posts/${post.slug}`,
                 images: [
                   {
-                    url: `${BASE_URL}/api/og?title=${post.title}`,
+                    url: `${BASE_URL}/api/og?title=${encodeURIComponent(post.title ?? '')}`,
                     width: 1200,
                     height: 630,
-                    alt: '記事サムネイル',
+                    alt: '',
                   },
                 ],
               }}

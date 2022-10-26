@@ -1,16 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from '@vercel/og'
-import { NextRequest } from 'next/server'
+import { NextApiHandler } from 'next'
 
 export const config = {
   runtime: 'experimental-edge',
 }
 
-export default function handler(req: NextRequest) {
+const handler: NextApiHandler = async (req) => {
   try {
+    if (!req.url) throw Error('リクエストが不正です。')
     const { searchParams } = new URL(req.url)
     const hasTitle = searchParams.has('title')
-    if (!hasTitle) return
+    if (!hasTitle) throw Error('パラメータが存在しません。')
     const title = searchParams.get('title')?.slice(0, 75)
     return new ImageResponse(
       (
@@ -60,3 +61,5 @@ export default function handler(req: NextRequest) {
     })
   }
 }
+
+export default handler
