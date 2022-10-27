@@ -1,8 +1,6 @@
 ---
 title: 'Next.jsで作ったブログでZennのRSSを取得したい'
 date: '2022-10-12'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['next.js']
 ---
 

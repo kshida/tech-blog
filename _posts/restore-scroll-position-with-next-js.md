@@ -1,8 +1,6 @@
 ---
 title: 'Next.jsでブラウザバックした際にスクロール位置を復元したい'
 date: '2022-10-04'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['next.js']
 ---
 

@@ -1,8 +1,6 @@
 ---
 title: 'Chakra UIのLinkとnext/linkを併用したい'
 date: '2022-10-09'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['next.js', 'chakra-ui']
 ---
 

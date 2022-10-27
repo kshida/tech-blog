@@ -1,8 +1,6 @@
 ---
 title: 'Next.jsで作ったブログにRSSフィードを追加する'
 date: '2022-10-22'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['next.js']
 ---
 

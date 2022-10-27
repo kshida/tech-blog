@@ -1,8 +1,6 @@
 ---
 title: 'Xserverドメインで取得した独自ドメインをCloudflare Pagesのカスタムドメインに設定する'
 date: '2022-10-10'
-ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
 tags: ['cloudflare']
 ---
 
