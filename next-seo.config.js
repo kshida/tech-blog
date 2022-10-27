@@ -12,7 +12,7 @@ export default {
     locale: 'ja_JP',
     images: [
       {
-        url: 'https://avatars.githubusercontent.com/u/34312716?v=4',
+        url: 'https://kshida-blog.com/og/top.png',
         width: 1200,
         height: 630,
         alt: '',
