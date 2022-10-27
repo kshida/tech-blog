@@ -110,10 +110,10 @@ const getOgImage = async (title: string, slug: string) => {
     const resvg = new Resvg(svg)
     const pngData = resvg.render()
     const pngBuffer = pngData.asPng()
-    const ogPath = `/public/og/${slug}.png`
+    const ogPath = `/og/${slug}.png`
     // OGP画像を public/og 配下に保存する
     fs.mkdirSync('./public/og', { recursive: true })
-    fs.writeFileSync(`.${ogPath}`, pngBuffer)
+    fs.writeFileSync(`./public${ogPath}`, pngBuffer)
     return ogPath
   } catch (e: any) {
     console.log(e.message)
