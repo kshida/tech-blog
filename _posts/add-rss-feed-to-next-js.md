@@ -65,7 +65,7 @@ export const generateRssFeed = () => {
 
   const feed = new Feed({
     title: "kshida's blog",
-    description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
+    description: '歴史好きエンジニアが日々の学びをアウトプットしていきます。',
     id: baseUrl,
     link: baseUrl,
     language: 'ja',

@@ -2,12 +2,12 @@
 export default {
   titleTemplate: "%s | kshida's blog",
   defaultTitle: "kshida's blog",
-  description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
+  description: '歴史好きエンジニアが日々の学びをアウトプットしていきます。',
   openGraph: {
     site_name: "kshida's blog",
     title: "kshida's blog",
     type: 'website',
-    description: '文系エンジニアが日々の学びを分かりやすい形でアウトプットしていきます。',
+    description: '歴史好きエンジニアが日々の学びをアウトプットしていきます。',
     url: 'https://kshida-blog.com',
     locale: 'ja_JP',
     images: [
