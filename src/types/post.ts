@@ -3,9 +3,7 @@ export interface PostType {
   title: string
   date: string
   content: string
-  ogImage: {
-    url: string
-  }
+  ogPath: string
   tags: string[]
   type: number
   coverImage?: string

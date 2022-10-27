@@ -2,6 +2,7 @@ import { ParsedUrlQuery } from 'querystring'
 import { GetStaticProps } from 'next'
 import { PostPage } from '@/features/PostPage'
 import { markdownToHtml } from '@/libs/markdownToHtml'
+import getOgImage from '@/libs/og'
 import { PostType } from '@/types/post'
 import { getPostBySlug, getAllPosts } from 'libs/api'
 
@@ -16,14 +17,16 @@ interface Params extends ParsedUrlQuery {
 }
 
 export const getStaticProps: GetStaticProps<Props, Params> = async ({ params }) => {
-  const post = getPostBySlug(params!.slug, ['title', 'date', 'slug', 'content', 'ogImage', 'tags'])
+  const post = getPostBySlug(params!.slug, ['title', 'date', 'slug', 'content', 'tags'])
   const content = await markdownToHtml(post.content || '')
+  const ogPath = await getOgImage(post.title, post.slug)
 
   return {
     props: {
       post: {
         ...post,
         content,
+        ogPath,
       },
     },
   }

@@ -35,3 +35,6 @@ yarn-error.log*
 
 # rss feed
 /public/rss/feed.xml
+
+# ogp
+/public/og

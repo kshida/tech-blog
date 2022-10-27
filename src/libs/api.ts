@@ -22,9 +22,7 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
     title: '',
     date: '',
     content: '',
-    ogImage: {
-      url: '',
-    },
+    ogPath: '',
     tags: [],
     type: Platform.Blog,
   }
@@ -41,9 +39,6 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
     }
     if (field === 'content') {
       items[field] = content
-    }
-    if (field === 'ogImage') {
-      items[field] = data['ogImage']['url']
     }
     if (field === 'tags') {
       items[field] = data['tags']
@@ -88,9 +83,7 @@ export const getZennRssFeed = async () => {
         title: item.title ?? '',
         date: item.pubDate ? dayjs(item.pubDate).format('YYYY-MM-DD') : '',
         content: '',
-        ogImage: {
-          url: '',
-        },
+        ogPath: '',
         tags: ['zenn'],
         type: Platform.Zenn,
       }),

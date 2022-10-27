@@ -1,6 +1,5 @@
 import { NextSeo } from 'next-seo'
 import ErrorPage from 'next/error'
-import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Container } from '@/components/Container'
 import { Layout } from '@/components/Layout'
@@ -32,7 +31,7 @@ export const PostPage: React.FC<Props> = ({ post }) => {
                 url: `${BASE_URL}/posts/${post.slug}`,
                 images: [
                   {
-                    url: `${BASE_URL}/api/og?title=${encodeURIComponent(post.title ?? '')}`,
+                    url: `${BASE_URL}${post.ogPath}`,
                     width: 1200,
                     height: 630,
                     alt: '',
