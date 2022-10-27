@@ -24,7 +24,9 @@ export const Header = () => {
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <HStack spacing={8} alignItems={'center'}>
             <Heading as='h1' size='lg' py={4} textAlign={'center'} wordBreak='keep-all'>
-              {`kshida's blog`}
+              <NavLink link='/' isRichStyle={true}>
+                {`kshida's blog`}
+              </NavLink>
             </Heading>
             <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
               {Links.map((link) => (
@@ -57,6 +59,7 @@ export const Header = () => {
             _hover={{
               bg: useColorModeValue('#ceefe4', '#ceefe4'),
             }}
+            _focus={{ boxShadow: 'none' }}
           />
         </Flex>
 

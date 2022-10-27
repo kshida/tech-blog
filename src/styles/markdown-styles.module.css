@@ -23,7 +23,7 @@
 }
 
 .markdown code {
-  @apply bg-[#215aa012] py-1 px-2 text-sm rounded;
+  @apply bg-[#215aa012] py-1 text-sm rounded;
 }
 
 .markdown pre {

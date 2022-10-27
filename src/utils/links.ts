@@ -15,8 +15,8 @@ export const Links = [
   //   title: 'Book Review',
   //   slug: 'book_review'
   // },
-  {
-    title: 'Profile',
-    slug: '/profile',
-  },
+  // {
+  //   title: 'Profile',
+  //   slug: '/profile',
+  // },
 ]
