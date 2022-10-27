@@ -16,7 +16,6 @@
     "@emotion/styled": "^11.8.1",
     "@leafac/rehype-shiki": "^2.1.2",
     "@resvg/resvg-js": "^2.1.0",
-    "@vercel/og": "^0.0.20",
     "classnames": "2.3.1",
     "date-fns": "2.21.3",
     "dayjs": "^1.11.5",
