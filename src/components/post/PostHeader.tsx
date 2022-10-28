@@ -1,3 +1,4 @@
+import { Box, HStack, Text } from '@chakra-ui/react'
 import { PostTitle } from '@/components/post/PostTitle'
 
 interface Props {
@@ -7,9 +8,11 @@ interface Props {
 
 export const PostHeader: React.FC<Props> = ({ title, date }) => {
   return (
-    <div className='max-w-[790px] mx-auto px-10'>
+    <Box maxWidth='790px' mx='auto' px={{ base: 5, md: 10 }}>
       <PostTitle>{title}</PostTitle>
-      <div className='mb-6 text-lg'>投稿日：{date}</div>
-    </div>
+      <HStack mb={6} fontSize='18px' lineHeight='28px' justifyContent='space-between'>
+        <Text>投稿日：{date}</Text>
+      </HStack>
+    </Box>
   )
 }

@@ -40,7 +40,7 @@ export const PostPage: React.FC<Props> = ({ post }) => {
               }}
             />
             <PostHeader title={post.title} date={post.date} />
-            <PostBody content={post.content} />
+            <PostBody title={post.title} content={post.content} slug={post.slug} />
           </article>
         )}
       </Container>
