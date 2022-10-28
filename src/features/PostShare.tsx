@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react'
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -22,21 +23,31 @@ interface Props {
 export const PostShare: React.FC<Props> = ({ title, slug, size = 40, isRound = true }) => {
   return (
     <>
-      <FacebookShareButton url={`${BASE_URL}/posts/${slug}`} quote={title}>
-        <FacebookIcon size={size} round={isRound} />
-      </FacebookShareButton>
-      <TwitterShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
-        <TwitterIcon size={size} round={isRound} />
-      </TwitterShareButton>
-      <HatenaShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
-        <HatenaIcon size={size} round={isRound} />
-      </HatenaShareButton>
-      <LineShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
-        <LineIcon size={size} round={isRound} />
-      </LineShareButton>
-      <LinkedinShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
-        <LinkedinIcon size={size} round={isRound} />
-      </LinkedinShareButton>
+      <Box _hover={{ opacity: 0.5 }}>
+        <FacebookShareButton url={`${BASE_URL}/posts/${slug}`} quote={title}>
+          <FacebookIcon size={size} round={isRound} />
+        </FacebookShareButton>
+      </Box>
+      <Box _hover={{ opacity: 0.5 }}>
+        <TwitterShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
+          <TwitterIcon size={size} round={isRound} />
+        </TwitterShareButton>
+      </Box>
+      <Box _hover={{ opacity: 0.5 }}>
+        <HatenaShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
+          <HatenaIcon size={size} round={isRound} />
+        </HatenaShareButton>
+      </Box>
+      <Box _hover={{ opacity: 0.5 }}>
+        <LineShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
+          <LineIcon size={size} round={isRound} />
+        </LineShareButton>
+      </Box>
+      <Box _hover={{ opacity: 0.5 }}>
+        <LinkedinShareButton url={`${BASE_URL}/posts/${slug}`} title={title}>
+          <LinkedinIcon size={size} round={isRound} />
+        </LinkedinShareButton>
+      </Box>
     </>
   )
 }
